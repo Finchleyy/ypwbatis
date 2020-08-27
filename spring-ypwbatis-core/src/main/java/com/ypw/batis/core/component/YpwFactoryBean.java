@@ -7,6 +7,8 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 /**
+ * 使用 FactoryBean 生成动态代理的 Bean
+ *
  * @author yupengwu
  */
 public class YpwFactoryBean implements FactoryBean {

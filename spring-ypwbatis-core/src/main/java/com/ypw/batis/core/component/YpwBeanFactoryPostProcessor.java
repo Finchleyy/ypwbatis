@@ -1,6 +1,6 @@
 package com.ypw.batis.core.component;
 
-import com.ypw.batis.core.mapper.MyMapper;
+import com.ypw.batis.core.mapper.TestMapper;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
@@ -24,7 +24,7 @@ public class YpwBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
         genericBeanDefinition.setBeanClass(TestServiceImpl.class);*/
         //构造 beandefinition
         List<Class> mappers = new ArrayList<>();
-        mappers.add(MyMapper.class);
+        mappers.add(TestMapper.class);
         for (Class mapper : mappers) {
             BeanDefinitionBuilder beanDefinitionBuilder = BeanDefinitionBuilder.genericBeanDefinition();
             AbstractBeanDefinition beanDefinition = beanDefinitionBuilder.getBeanDefinition();
