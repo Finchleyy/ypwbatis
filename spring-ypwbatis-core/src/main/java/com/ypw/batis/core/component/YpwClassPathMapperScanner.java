@@ -33,6 +33,9 @@ public class YpwClassPathMapperScanner extends ClassPathBeanDefinitionScanner {
         return beanDefinition.getMetadata().isInterface() && beanDefinition.getMetadata().isIndependent();
     }
 
+    /**
+     * FIXME 非常重要!!!! 没有 includeFilter不会被扫描注入到 spring中
+     */
     public void registerFilters() {
         // default include filter that accepts all classes
         addIncludeFilter(new TypeFilter() {

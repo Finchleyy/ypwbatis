@@ -50,7 +50,9 @@ public class YpwBeanDefinitionRegistry implements ImportBeanDefinitionRegistrar 
          */
         //扫描路径 构造 beandefinition
         YpwClassPathMapperScanner ypwClassPathMapperScanner = new YpwClassPathMapperScanner(registry);
-        //FIXME 暂时无法扫描到 mapper?? 因为没有 includeFilter不会被扫描注入到 spring中
+        //FIXME 暂时无法扫描到 mapper??
+        //没有 includeFilter不会被扫描注入到 spring中
+        //必须要重写isCandidateComponent 否则无法将接口类型注入 BeanDefinition
         ypwClassPathMapperScanner.registerFilters();
         Set<BeanDefinitionHolder> beanDefinitions = ypwClassPathMapperScanner.doScan(path.toString());
         if (beanDefinitions.isEmpty()) {
