@@ -50,6 +50,7 @@ public class YpwBeanDefinitionRegistry implements ImportBeanDefinitionRegistrar 
          */
         //扫描路径 构造 beandefinition
         YpwClassPathMapperScanner ypwClassPathMapperScanner = new YpwClassPathMapperScanner(registry);
+
         //FIXME 暂时无法扫描到 mapper??
         //没有 includeFilter不会被扫描注入到 spring中
         //必须要重写isCandidateComponent 否则无法将接口类型注入 BeanDefinition
@@ -60,9 +61,10 @@ public class YpwBeanDefinitionRegistry implements ImportBeanDefinitionRegistrar 
         } else {
             for (BeanDefinitionHolder beanDefinitionHolder : beanDefinitions) {
                 GenericBeanDefinition beanDefinition = (GenericBeanDefinition) beanDefinitionHolder.getBeanDefinition();
-                beanDefinition.setBeanClass(YpwFactoryBean.class);
+                beanDefinition.setBeanClass(ServiceFactory.class);
                 //给BeanDefinition构造器参数传值 设置 bean 的名称
                 beanDefinition.getConstructorArgumentValues().addGenericArgumentValue(beanDefinition.getClass().getName());
+                beanDefinition.setAutowireMode(GenericBeanDefinition.AUTOWIRE_BY_TYPE);
             }
         }
     }

@@ -11,16 +11,16 @@ import java.lang.reflect.Proxy;
  *
  * @author yupengwu
  */
-public class YpwFactoryBean implements FactoryBean {
-    private Class clazz;
+public class YpwFactoryBean<T> implements FactoryBean<T> {
+    private Class<T> clazz;
 
-    public YpwFactoryBean(Class clazz) {
+    public YpwFactoryBean(Class<T> clazz) {
         this.clazz = clazz;
     }
 
     @Override
-    public Object getObject() throws Exception {
-        Object proxyInstance = Proxy.newProxyInstance(clazz.getClassLoader(), clazz.getInterfaces(), new InvocationHandler() {
+    public T getObject() throws Exception {
+        T proxyInstance = (T) Proxy.newProxyInstance(clazz.getClassLoader(), clazz.getInterfaces(), new InvocationHandler() {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
                 System.out.println("befor proxy.....");
@@ -35,7 +35,7 @@ public class YpwFactoryBean implements FactoryBean {
     }
 
     @Override
-    public Class<?> getObjectType() {
+    public Class<T> getObjectType() {
         return clazz;
     }
 }

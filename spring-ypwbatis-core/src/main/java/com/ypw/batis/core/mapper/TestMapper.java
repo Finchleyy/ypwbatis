@@ -1,8 +1,11 @@
 package com.ypw.batis.core.mapper;
 
+import com.ypw.batis.core.annotation.YpwSql;
+
 /**
  * @author yupengwu
  */
 public interface TestMapper {
-    public String selectOne(String source);
+    @YpwSql(sql = "select * from tb")
+    String selectTemp(String source);
 }
