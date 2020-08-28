@@ -9,7 +9,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  * @author yupengwu
  */
 @Configuration
-@ComponentScan(basePackages = "com.ypw.batis")
+//@ComponentScan(basePackages = "com.ypw.batis")
 @EnableAspectJAutoProxy(proxyTargetClass = false)
 @YpwMapperScan(path = "com.ypw.batis.core.mapper")
 public class YpwBatisConfig {

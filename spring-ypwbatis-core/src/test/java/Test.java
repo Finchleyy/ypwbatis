@@ -6,7 +6,8 @@ public class Test {
     @org.junit.jupiter.api.Test
     void name() {
         AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(YpwBatisConfig.class);
-        Object bean = annotationConfigApplicationContext.getBean("com.ypw.batis.core.mapper.TestMapper");
+
+        Object bean = annotationConfigApplicationContext.getBean("testMapper");
         System.out.println(bean);
     }
 }

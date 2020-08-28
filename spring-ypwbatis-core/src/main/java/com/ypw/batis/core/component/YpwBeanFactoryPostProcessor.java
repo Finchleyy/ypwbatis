@@ -14,16 +14,16 @@ import java.util.List;
 /**
  * @author yupengwu
  */
-@Component
+/*@Component
 public class YpwBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory configurableListableBeanFactory) throws BeansException {
         //将userServiceImpl的 beanDefinition 替换为 TestServiceImpl
-        /*GenericBeanDefinition genericBeanDefinition = (GenericBeanDefinition) configurableListableBeanFactory.getBeanDefinition("userServiceImpl");
+        *//*GenericBeanDefinition genericBeanDefinition = (GenericBeanDefinition) configurableListableBeanFactory.getBeanDefinition("userServiceImpl");
         System.out.println(genericBeanDefinition.getBeanClassName());
-        genericBeanDefinition.setBeanClass(TestServiceImpl.class);*/
+        genericBeanDefinition.setBeanClass(TestServiceImpl.class);*//*
         //构造 beandefinition
-        List<Class> mappers = new ArrayList<>();
+        *//*List<Class> mappers = new ArrayList<>();
         mappers.add(TestMapper.class);
         for (Class mapper : mappers) {
             BeanDefinitionBuilder beanDefinitionBuilder = BeanDefinitionBuilder.genericBeanDefinition();
@@ -31,7 +31,7 @@ public class YpwBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
             beanDefinition.setBeanClass(YpwFactoryBean.class);
             beanDefinition.getConstructorArgumentValues().addGenericArgumentValue(mapper);
 
-        }
+        }*//*
 
     }
-}
+}*/
