@@ -26,7 +26,7 @@ public class YpwClassPathMapperScanner extends ClassPathBeanDefinitionScanner {
     }
 
     /**
-     * TODO 非常重要!!!!否则无法找到接口
+     * FIXME 非常重要!!!!否则无法找到接口
      */
     @Override
     protected boolean isCandidateComponent(AnnotatedBeanDefinition beanDefinition) {

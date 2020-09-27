@@ -65,6 +65,7 @@ public class YpwBeanDefinitionRegistry implements ImportBeanDefinitionRegistrar 
                 //给BeanDefinition构造器参数传值 设置 bean 的名称
                 beanDefinition.getConstructorArgumentValues().addGenericArgumentValue(beanDefinition.getClass().getName());
                 beanDefinition.setAutowireMode(GenericBeanDefinition.AUTOWIRE_BY_TYPE);
+
             }
         }
     }

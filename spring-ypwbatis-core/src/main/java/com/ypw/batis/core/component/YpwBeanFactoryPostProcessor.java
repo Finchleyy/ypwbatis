@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * mybatis 不应该在这里处理 mapper 的代理
+ *
  * @author yupengwu
  */
 /*@Component
