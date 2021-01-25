@@ -7,6 +7,7 @@ import java.util.Arrays;
 
 /**
  * 动态代理，需要注意的是，这里用到的是JDK自带的动态代理，代理对象只能是接口，不能是类
+ * @author yupengwu
  */
 
 public class ServiceProxy<T> implements InvocationHandler {

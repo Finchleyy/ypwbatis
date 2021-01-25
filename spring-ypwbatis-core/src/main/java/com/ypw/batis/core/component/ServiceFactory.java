@@ -7,6 +7,7 @@ import java.lang.reflect.Proxy;
  
 /**
  * 接口实例工厂，这里主要是用于提供接口的实例对象
+ * @author yupengwu
  * @param <T>
  */
 public class ServiceFactory<T> implements FactoryBean<T> {

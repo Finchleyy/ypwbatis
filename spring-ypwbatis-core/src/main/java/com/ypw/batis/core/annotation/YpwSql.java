@@ -6,6 +6,9 @@ import java.lang.annotation.Target;
 
 import static java.lang.annotation.ElementType.METHOD;
 
+/**
+ * @author yupengwu
+ */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(METHOD)
 public @interface YpwSql {
